@@ -11,6 +11,6 @@ G_phase = lsqcurvefit(@(param,wval) phasepred(param,wval,Kp,taup,zeta),1,wvec,z)
 D = real(G_phase);
 s = tf('s');
 G_SOPTD_ls = Kp*exp(-D*s)/(taup^2*s^2 + 2*zeta*taup*s + 1);
-step(Gs,G_SOPTD_ls)
+step(Gs,G_SOPTD_ls);
 
 % G_SOPTD_ls % approximated SOPTD model
